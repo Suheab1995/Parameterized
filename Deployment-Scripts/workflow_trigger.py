@@ -20,7 +20,7 @@ def trigger_workflow(Workflow_Name,pl_Baseline_Number,pl_Baseline_Revision):
       }
 
       data = {
-        "event_type": Workflow_Name
+        "event_type": Workflow_Name,
       }
       responsevalue=requests.post(f"https://api.github.com/repos/{OWNER}/{REPO}/dispatches",json=data,headers=headers)
       print("The respoinse message is ",responsevalue.content)
